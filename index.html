@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Navigation</title>
+</head>
+<body>
+  <!-- Overlay -->
+  <div class="overlay overlay-slide-left" id="overlay">
+    <nav>
+      <ul>
+        <li class="nav1 slide-out1" onclick="toggleNav()"> <a href="#home">Home</a></li>
+        <li class="nav2 slide-out2" onclick="toggleNav()"> <a href="#about">About</a></li>
+        <li class="nav3 slide-out3" onclick="toggleNav()"> <a href="#skills">Skills</a></li>
+        <li class="nav4 slide-out4" onclick="toggleNav()"> <a href="#projects">Projects</a></li>
+        <li class="nav5 slide-out5" onclick="toggleNav()"> <a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="menubar" onclick="menuBar(this)">
+    <div class="bar1" ></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+  <section class="home" id="home"><a href="https://weather-fa-application.herokuapp.com/" target="_blank">Weather App</a></section>
+  <section class="about" id="about"><h1>Learn more about me</h1></section>
+  <section class="skills" id="skills"><h1>These are my strength</h1></section>
+  <section class="projects" id="projects"><h1>These are my results</h1></section>
+  <section class="contact" id="contact"><h1>Available any time</h1></section>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+
+:root{
+  --primary-color: #fff;
+  --navColor1: #0287A6;
+  --navColor2: #113FE5;
+  --navColor3: #FFB100;
+  --navColor4: #FF7F00;
+  --navColor5: #1DBCE1;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body{
+  background: #000;
+  font-family: 'Secular One', sans-serif;
+}
+
+/* Menu Bar **************/
+
+.menubar{
+  position: fixed;
+  z-index: 9;
+  top: 1rem;
+  right: 2rem;
+  cursor: pointer;
+}
+
+.bar1,.bar2,.bar3{
+  width: 30px;
+  height: 5px;
+  background-color: var(--primary-color);
+  margin: 5px 0;
+  transition: .5s ease;
+}
+
+.change .bar1 {
+  transform: rotate(-45deg) translate(-6px,6px);
+}
+
+.change .bar2{
+  opacity: 0;
+}
+
+.change .bar3{
+  transform: rotate(45deg) translate(-8px,-8px);
+}
+
+/* Section */
+
+section{
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+section.home{
+  background-image: url('https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+  background-position: center center;
+  background-size: cover;
+}
+
+section.home a{
+  position: fixed;
+  z-index: 1;
+  color: var(--primary-color);
+  text-decoration: none;
+  top: 2rem;
+  left: 2rem;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.about{
+  background-color: var(--navColor1);
+}
+
+.skills{
+  background-color: var(--navColor3);
+}
+
+.projects{
+  background-color: var(--navColor5);
+}
+
+.contact{
+  background-color: var(--navColor4);
+}
+
+.overlay{
+  position: fixed;
+  z-index: 9;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba( 0 0 0 / .7);
+  transform: translateX(-100vw);
+}
+
+
+.overlay-slide-right{
+  transform: translateX(0);
+  transition: all .4s ease;
+}
+
+.overlay-slide-left{
+  transform: translateX(-100vw);
+  transition: all .8s ease;
+}
+
+/* Nav Menu Items */
+
+nav,
+nav ul {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+nav ul li{
+  height: 20%;
+  overflow: hidden;
+}
+
+nav li a {
+  position: relative;
+  top: 45%;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+nav li a:hover{
+  transform: scale(1.2);
+}
+
+nav li a::before{
+  content: '';
+  width: 25vw;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  top: 47.5%;
+  opacity: 0;
+}
+
+
+nav li a:hover::before{
+  opacity: 1;
+}
+
+
+nav li:nth-of-type(1){
+  background-color: var(--navColor2);
+}
+
+nav li:nth-of-type(2){
+  background-color: var(--navColor1);
+}
+
+nav li:nth-of-type(3){
+  background-color: var(--navColor3);
+}
+
+nav li:nth-of-type(4){
+  background-color: var(--navColor5);
+}
+
+nav li:nth-of-type(5){
+  background-color: var(--navColor4);
+}
+
+
+
+/* Slide in animaition with delay for each nav item */
+
+.slide-in1{
+  animation: slide-in .4s linear .2s both;
+}
+.slide-in2{
+  animation: slide-in .4s linear .4s both;
+}
+.slide-in3{
+  animation: slide-in .4s linear .6s both;
+}
+.slide-in4{
+  animation: slide-in .4s linear .8s both;
+}
+.slide-in5{
+  animation: slide-in .4s linear 1s both;
+}
+
+
+
+@keyframes slide-in {
+  from{
+    transform: translateX(-100vw);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+
+/* Slide out animaition with delay for each nav item */
+
+.slide-out1{
+  animation: slide-out .3s linear .5s both;
+}
+.slide-out2{
+  animation: slide-out .3s linear .4s both;
+}
+.slide-out3{
+  animation: slide-out .3s linear .3s both;
+}
+.slide-out4{
+  animation: slide-out .3s linear .2s both;
+}
+.slide-out5{
+  animation: slide-out .3s linear .1s both;
+}
+
+
+
+@keyframes slide-out {
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-100vw);
+  }
+}
+
+
+
